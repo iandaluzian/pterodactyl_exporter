@@ -7,7 +7,7 @@ class HTTPServer:
     def __init__(self, config: Config):
         start_http_server(config.port)
 
-        label_names = ("server_name", "id",)
+        label_names = ("server_name", "id", "node")
 
         self.metric_gauges = {
             "memory": Gauge("pterodactyl_server_memory_mebibyte", "Memory used by server in mebibyte", label_names),
