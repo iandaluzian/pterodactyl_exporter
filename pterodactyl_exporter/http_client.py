@@ -54,6 +54,7 @@ class HTTPClient:
         self.metrics.max_disk.append(attributes['limits']['disk'])
         self.metrics.io.append(attributes['limits']['io'])
         self.metrics.max_cpu.append(attributes['limits']['cpu'])
+        self.metrics.node.append(attributes.get('node', ''))
 
     def fetch_resources(self, server_id, index, page):
         url = f"{self.get_url()}/api/client/servers/{server_id}/resources?page={page}"

@@ -18,6 +18,7 @@ class Metrics:
     io: List[float] = field(default_factory=list)
     max_cpu: List[float] = field(default_factory=list)
     last_backup_time: List[float] = field(default_factory=list)
+    node: List[str] = field(default_factory=list)
 
     def __iter__(self):
         fields = self.__dataclass_fields__.keys()
