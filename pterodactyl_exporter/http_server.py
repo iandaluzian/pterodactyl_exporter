@@ -28,6 +28,7 @@ class HTTPServer:
         for index in range(len(metrics.name)):
             srv_label = metrics.name[index]
             id_label = metrics.id[index]
+            node_label = metrics.node[index]
             for metric_name, value in metrics.__dict__.items():
-                if metric_name not in ['name', 'id']:
-                    self.metric_gauges[metric_name].labels(srv_label, id_label).set(value[index])
+                if metric_name not in ['name', 'id', 'node']:
+                    self.metric_gauges[metric_name].labels(srv_label, id_label, node_label).set(value[index])
